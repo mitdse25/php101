@@ -398,3 +398,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ```
 
 These files provide basic functionality for updating user profiles, deleting accounts, and uploading files. Adjustments might be needed based on your specific requirements and the backend implementation you choose.
+
+You can enhance the password validation in the `signup.js` file to ensure it contains at least one number and one special character. Here's an updated `signup.js`:
+
+```javascript
+function validateForm() {
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirmPassword').value;
+
+    // Regular expressions for password validation
+    var containsNumber = /\d/.test(password);
+    var containsSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+    if (password.length < 8) {
+        alert('Password must be at least 8 characters long.');
+    } else if (!containsNumber || !containsSpecialChar) {
+        alert('Password must contain at least one number and one special character.');
+    } else if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+    } else {
+        document.getElementById('signupForm').submit();
+    }
+}
+```
+
+In this version, it checks whether the password contains at least one number (`\d` in the regular expression) and at least one special character (`[!@#$%^&*(),.?":{}|<>]` in the regular expression). If the password doesn't meet these criteria, an alert will notify the user.
+
+Remember to update your `signup.php` server-side validation if needed to ensure consistent validation on both the client and server sides.
