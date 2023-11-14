@@ -1,0 +1,39 @@
+<!-- HTML (index.html) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test JavaScript Form Validation</title>
+    <link rel="stylesheet" href="validatcss.css">
+    <script type="text/javascript" src="validatefrm.js"></script>
+</head>
+<body>
+    <h2>Test JavaScript Form Validation</h2>
+    <form method="post" action="validation.php" name="empfrm" id="eform" onsubmit="return validateForm(this)">
+        <table>
+            <tr>
+                <td>Name<span class="red">*</span></td>
+                <td>
+                    <input type="text" id="name" name="name" tabindex="1" placeholder="Enter" value="Default Name" />
+                    <span id="nameError" class="red"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Email<span class="red">*</span></td>
+                <td>
+                    <input type="text" id="email" name="email" />
+                    <span id="emailError" class="red"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" value="SEND" id="submit" />&nbsp;
+                    <input type="reset" value="CLEAR" id="reset" onclick="clearDisplay()" />&nbsp;&nbsp;
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

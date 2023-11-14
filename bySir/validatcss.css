@@ -1,0 +1,20 @@
+/* CSS (validatcss.css) */
+/* for error messages */
+.red {
+    color: red;
+}
+
+/* for the error input text fields */
+input.error {
+    border: 1px red inset;
+    padding: 2px;
+}
+
+table {
+    border: 0;
+}
+
+td {
+    margin: 0;
+    padding: 3px 10px 3px 3px;
+}
